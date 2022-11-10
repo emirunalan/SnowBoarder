@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 public class CrashDetector : MonoBehaviour
 {
     
-    int currentLevel = SceneManager.GetActiveScene().buildIndex;
+    int currentLevel;
     [SerializeField] float loadDelay = 1f;
+
+    private void Start() 
+    {
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
